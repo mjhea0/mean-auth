@@ -6,7 +6,7 @@ myApp.config(function ($routeProvider) {
     .when('/login', {
       templateUrl: 'partials/login.html',
       controller: 'loginController',
-      access: {restricted: true}
+      access: {restricted: false}
     })
     .when('/logout', {
       controller: 'logoutController',
@@ -15,7 +15,7 @@ myApp.config(function ($routeProvider) {
     .when('/register', {
       templateUrl: 'partials/register.html',
       controller: 'registerController',
-      access: {restricted: true}
+      access: {restricted: false}
     })
     .when('/one', {
       template: '<h1>This is page one!</h1>',
