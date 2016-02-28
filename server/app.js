@@ -1,14 +1,14 @@
 // dependencies
-var express = require('express'),
-    logger = require('morgan'),
-    cookieParser = require('cookie-parser'),
-    bodyParser = require('body-parser'),
-    expressSession = require('express-session'),
-    mongoose = require('mongoose'),
-    hash = require('bcrypt-nodejs'),
-    path = require('path'),
-    passport = require('passport'),
-    localStrategy = require('passport-local' ).Strategy;
+var express = require('express');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var expressSession = require('express-session');
+var mongoose = require('mongoose');
+var hash = require('bcrypt-nodejs');
+var path = require('path');
+var passport = require('passport');
+var localStrategy = require('passport-local' ).Strategy;
 
 // mongoose
 mongoose.connect('mongodb://localhost/mean-auth');
@@ -51,9 +51,9 @@ app.get('/', function(req, res) {
 
 // error hndlers
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
 
 app.use(function(err, req, res) {
