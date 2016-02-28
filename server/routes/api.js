@@ -37,4 +37,11 @@ router.get('/logout', function(req, res) {
   res.status(200).json({status: 'Bye!'});
 });
 
+router.get('/status', function(req, res) {
+  if (!req.isAuthenticated()) {
+    return res.status(200).json({status: false});
+  }
+  res.status(200).json({status: true});
+});
+
 module.exports = router;

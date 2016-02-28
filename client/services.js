@@ -15,11 +15,20 @@ angular.module('myApp').factory('AuthService',
     });
 
     function isLoggedIn() {
-        if(user) {
-          return true;
-        } else {
-          return false;
-        }
+      $http.get('/user/status')
+      // handle success
+      .success(function (data) {
+        user = true;
+      })
+      // handle error
+      .error(function (data) {
+        user = false;
+      });
+      if(user){
+        return true;
+      } else {
+        return false;
+      }
     }
 
     function getUserStatus() {
