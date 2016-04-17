@@ -23,7 +23,7 @@ angular.module('myApp').factory('AuthService',
     }
 
     function getUserStatus() {
-      $http.get('/user/status')
+      return $http.get('/user/status')
       // handle success
       .success(function (data) {
         if(data.status){
